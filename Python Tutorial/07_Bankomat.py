@@ -9,11 +9,25 @@ def deposit():
 
 def withdrawl():
     print("geben Sie Betrag ein, den Sie auszahlen möchten")
-    withdrawlAmount = float(input())
+
+    state = True
+    while state:
+        withdrawlAmount = float(input())
+
+        if (balance - withdrawlAmount) < 0:
+            print("!!!!nicht genug Guthaben!!!!")
+            print("ihr aktueller Kontostand", balance)
+            print("-----------------------------------")
+            print("geben Sie neuen Betrag ein, den Sie auszahlen möchten")
+        else:
+            state = False
+
     return withdrawlAmount
+
 
 def Balance(balance):
     print("Kontostand:", balance)
+    
 
 def finish():
     print("Aufwiedersehen")
